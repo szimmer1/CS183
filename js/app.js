@@ -17,8 +17,5 @@ angular.module('app', ['controllers','ngRoute'])
                 templateUrl: '404.html'
             });
 
-        $locationProvider
-            .html5Mode(true);
-
     });
 
