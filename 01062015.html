@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CS183 Lecture Notes</title>
+
+    <link type="text/css" rel="main.css" />
+    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <!-- TODO ng-include a header corresponding to lecture date -->
+    <!-- TODO ng-include a side navbar corresponding to lecture topics (h's) -->
+    <p>
+        Chose web2py because:
+        <ul>
+        <li>Easy to learn</li>
+        <li>Concise</li>
+        <li>Uses python, which is good to access data structures, etc</li>
+        </ul>
+    </p>
+
+    <h3>How dynamic is a website built?</h3>
+    <p>
+        Scaling = multiple servers
+        <ul>
+        <li>Every request, once over, is over</li>
+        <li>Requests from the same browser, not guaranteed to go to same server</li>
+        <li>Cannot put data in the filesystem because it has limited sharing</li>
+        </ul>
+    </p>
+    <p>
+        The data lives in a database. Provides:
+        <ul>
+        <li>Persistence</li>
+        <li>Sharing across servers</li>
+        <li>Concurrency: servers can concurrently read/write data</li>
+        <li>Replication of the data in multiple databases, to guard from failure</li>
+        </ul>
+    </p>
+    <p>
+        Ingredients of a website/app
+        <ul>
+        <li>A <strong>framework</strong> for facilitating writing code</li>
+        <li>A <strong>database</strong> to store data</li>
+        <li><strong>Code</strong></li>
+        <li><strong>Digital assets</strong></li>
+        <li><strong>Domain name, SSL cert</strong></li>
+        <li><strong>IP</strong>: copywrite, patents on tech, incorporating a company, other business-y things</li>
+        <li><strong>Deployment environment</strong></li>
+        <li><strong>Monitoring</strong> of the website</li>
+        <li><strong>Backups / data preservation</strong></li>
+        <li>A <strong>marketing plan</strong> to make a web site known</li>
+        <li><strong>Monetization / fundraising plan</strong> because in the end, keeping everything up at scale is not free</li>
+        </ul>
+    </p>
+
+    <h3>Download web2py</h3>
+    <p>
+        Source code vs. binary
+        <ul>
+        <li>Source code useful for running in the cloud, and making changes. <em data-name="TODO">Only way to access logs?</em></li>
+        </ul>
+    </p>
+
+    <h3>Run web2py</h3>
+    <p>
+        Anaconda
+    </p>
+    <p>
+       No command line support. Must use GUI to start web2py server.
+    </p>
+
+    <!-- <h1>Web2py</h1> -->
+    <h3>Editing applications</h3>
+    <p>
+        Registering apps, configuration, and editing MVC files all happens from the browser.
+    </p>
+    <h3>Routing</h3>
+    <p>
+        Url corresponds directly to MVC structure. For example:<br>
+        <code>https://app.domain.com/app/controller1/function1</code> corresponds in the MVC structure to<br>
+        <pre><code>-> class app
+        -> class controller1
+                -> function1()</code></pre>
+    </p>
+    <h3></h3>
+</body>
+</html>
