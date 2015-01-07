@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <title>CS183 Lecture Notes</title>
 
+    <link type="text/css" rel="stylesheet" href="css/main.css" />
     <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
     <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script type="text/javascript" src="js/underscore.js"></script>
+    <script>
+        var baseurl = '/CS183/';
+    </script>
     <script type="text/javascript" src="js/angular.js"></script>
     <script type="text/javascript" src="js/angular-route.js"></script>
+    <script type="text/javascript" src="js/services.js"></script>
     <script type="text/javascript" src="js/controllers.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
 </head>
@@ -15,9 +21,24 @@
 
     <ng-include src="'includes/header.html'"></ng-include>
 
-    <ng-view></ng-view>
+    <div class="container" ng-controller="MainController">
+        <div class="row">
+            <div class="col-md-2">
+                <ul>
+                    <li ng-repeat="lecture in lectureList">
+                        <a href="#/lectures/{{lecture}}">{{lecture}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-10">
+                <ng-view></ng-view>
+            </div>
+        </div>
+    </div>
 
     <ng-include src="'includes/footer.html'"></ng-include>
+
 
 </body>
 </html>
