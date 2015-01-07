@@ -6,7 +6,7 @@
 "use strict";
 
 angular.module('app', ['controllers','ngRoute'])
-    .config(function($locationProvider,$routeProvider) {
+    .config(function($routeProvider) {
 
         $routeProvider
             .when('/lectures/:lectureDate', {
@@ -14,7 +14,7 @@ angular.module('app', ['controllers','ngRoute'])
                 controller: 'LecturesController'
             })
             .otherwise({
-                templateUrl: '404.html'
+                redirectTo: '/'
             });
 
     });
