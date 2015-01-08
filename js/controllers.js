@@ -10,7 +10,6 @@ angular.module('controllers', [])
         $scope.mainTest = "Got MainController";
 
         getLectures();
-        console.log($scope.lectureList);
 
         function getLectures() {
             lectureService.getLectures()
