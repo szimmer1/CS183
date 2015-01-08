@@ -1,5 +1,11 @@
 CS183 Lecture Notes
 -------------------
+To get the needed lecture_list, 
+
+    cd CS183
+    npm install -l underscore
+    cd lectures
+    node lecture_collector.js
 
 Authored by [Shahar Z](http://www.shaharzimmerman.com)
 
