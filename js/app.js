@@ -5,7 +5,7 @@
 
 "use strict";
 
-angular.module('app', ['controllers','services','ngRoute'])
+angular.module('app', ['controllers','services','directives','ngRoute'])
     .config(function($locationProvider,$routeProvider) {
 
         $routeProvider
@@ -14,11 +14,11 @@ angular.module('app', ['controllers','services','ngRoute'])
                 controller: 'LecturesController'
             })
             .otherwise({
-                redirectTo: '#'
+                redirectTo: '#!'
             });
 
         // Don't want to interpret hashed url's for static website
-        //$locationProvider.html5Mode(true);
+        // $locationProvider.html5Mode(true);
 
     });
 

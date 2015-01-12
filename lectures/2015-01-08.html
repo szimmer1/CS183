@@ -1,0 +1,84 @@
+<h3>Python</h3>
+
+<p>
+    pitfalls for new programmers
+        </p>
+    <ul>
+    <li>dynamically typed</li>
+    <li>Booleans are capitalized. Eg. <code>c = False</code></li>
+    <li>
+        Use indentation instead of braces.
+        <code>
+<pre>
+if 'A' in dict:
+    b=3
+    return dict['A']+b
+else:
+    return False
+</pre>
+        </code>
+    </li>
+    <li>note colons in control flow elements</li>
+    <li><code>'A' in dict</code> interpreted as conditional, i.e. <code>True</code> or <code>False</code></li>
+    </ul>
+    <h3>functions</h3>
+        <p>
+            defined with <code>def f(x,y):</code> and return <code>return (x+y)</code>
+        </p>
+    <h3>str</h3>
+        <p>
+            declared as <code>'I am a string'</code> or <code>"I am a string"</code>
+        </p>
+        <ul>
+            <li>to get utf-8 encoding (web2py) on ASCII string <code>a</code>, do <code>a.encode('utf8')</code></li>
+            <li>formatted strings</li>
+            <ul>
+                <li>syntax: <code>"I am a formatted string with var %r" % (var)</code></li>
+                <li><code>%r</code> is dynamically typed, interpreted at runtime</li>
+            </ul>
+        </ul>
+    <h3>lists</h3>
+        <p>
+            defined as <code>list = [1,3,4]</code>
+        </p>
+        <ul>
+            <li>list have heterogeneous types</li>
+            <li>supported methods are append, insert, delete, slice, concat, iterate</li>
+            <li><strong>use nested lists to implement a binary tree</strong></li>
+        </ul>
+    <h3>tuple</h3>
+        <p>
+            defined as <code>tuple = (1,2,4)</code>
+        </p>
+        <ul>
+            <li>tuple is a list, but with immutable elements (no support for <code>tuple[0] = 5</code></li>
+            <li>if a tuple element is an object, the object's properties are mutable</li>
+        </ul>
+    <h3>dictionaries</h3>
+        <p>
+            defined as <code>dict = {'A':1,'B':2}</code>
+        </p>
+        <ul>
+            <li>keys can be any type implementing <code>__hash__</code>, which is pretty much every data type</li>
+            <li>useful methods are has_key, keys, values, items</li>
+            <li><strong>use dict of lists to implement a graph</strong></li>
+        </ul>
+    <h3>classes</h3>
+        <p>
+            defined as <code>class MyClass(object)</code>
+            </p>
+        <ul>
+            <li>constructor</li>
+            <uL>
+                <li>defined as <code>def __init__(self,[properties])</code></li>
+                <li>assign properties as <code>self.property = value</code></li>
+            </uL>
+        </ul>
+    <h3>JSON</h3>
+        <p>
+            how to use the python json library
+        </p>
+        <ul>
+            <li><code>import json</code> at file head</li>
+            <li>to encode in json, <code>json.dumps(var)</code></li>
+        </ul>
