@@ -7,17 +7,20 @@
     <link type="text/css" rel="stylesheet" href="css/main.css" />
     <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
     <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+
     <script type="text/javascript" src="js/underscore.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script>
-        var baseurl = '/CS183/';
+        // set global baseurl
+        baseurl = '/CS183/';
     </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/angular.js"></script>
     <script type="text/javascript" src="js/angular-route.js"></script>
     <script type="text/javascript" src="js/services.js"></script>
     <script type="text/javascript" src="js/controllers.js"></script>
     <script type="text/javascript" src="js/directives.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 </head>
 <body ng-app="app">
 
@@ -25,27 +28,25 @@
 
     <div class="container" ng-controller="MainController">
         <div class="row">
-            <div class="col-md-2">
-                <ul>
+            <div class="col-md-10">
+                <ng-view></ng-view>
+            </div>
+
+            <div class="col-md-2" style="margin: 20px 0 20px 0">
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">
+                Lectures <i class="fa fa-angle-down fa-lg"></i>
+                </button>
+                <ul class="dropdown-menu">
                     <li ng-repeat="lecture in lectureList">
                         <a href="#/lectures/{{lecture}}">{{lecture}}</a>
                     </li>
                 </ul>
-            </div>
-
-            <div class="col-md-10">
-                <ng-view></ng-view>
+              </div>
             </div>
         </div>
     </div>
 
     <ng-include src="'includes/footer.html'"></ng-include>
-
-    <script>
-        CS183 = {};
-        CS183.$ = jQuery.noConflict(true);
-        var numH3 = CS183.$("h3").length;
-        $("#first_header").after("<h1>Hello jQuery!</h1>");
-    </script>
 </body>
 </html>

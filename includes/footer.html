@@ -1,11 +1,19 @@
-<hr>
+<style>
+    .sidebar-right {
+        position: fixed;
+        bottom: 40%;
+        right: 10px;
+    }
+</style>
+<div class="sidebar-right">
+    <a href="https://github.com/szimmer1/CS183"><i class="fa fa-github fa-3x"></i></a><br>
+    <a href="http://www.shaharzimmerman.com"><i class="fa fa-angellist fa-3x"></i></a><br>
+    <a href="http://twitter.com/gnarshahar"><i class="fa fa-twitter fa-3x"></i></a>
+</div>
+<div class="footer">
 <div class="container">
+    <hr>
     <div class="row">
-        <div class="col-md-1">
-                <a href="https://github.com/szimmer1/CS183"><i class="fa fa-github fa-3x"></i></a><br>
-                <a href="http://www.shaharzimmerman.com"><i class="fa fa-angellist fa-3x"></i></a><br>
-                <a href="http://twitter.com/gnarshahar"><i class="fa fa-twitter fa-3x"></i></a>
-        </div>
         <div class="col-md-3">
             <p>Built by Shahar Zimmerman<br>
             Property of Luca de Alfaro</p><br>
@@ -13,3 +21,13 @@
         </div>
     </div>
 </div>
+</div>
+<script>
+    $(function() {
+        //debugger;
+        var docHeight = $(document).height();
+        var footerHeight = $('.footer').height();
+        var marginTop = docHeight-footerHeight;
+        $('.footer').css("margin-top", marginTop+"px")
+    });
+</script>

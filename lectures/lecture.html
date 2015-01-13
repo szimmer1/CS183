@@ -1,14 +1,13 @@
 <div class="container">
     <div class="row">
-
-        <div class="col-md-3">
-            <lecture-contents lecture="{{lectures.currentLecture}}"></lecture-contents> <!-- if doesn't work, try without expression -->
-        </div>
-
         <div class="col-md-8">
             <h1>{{lectures.formattedLectureDate}}</h1>
             <ng-include src="lectures.lectureUrl"></ng-include>
         </div>
 
+        <!-- TODO get lecture contents working
+        <div class="col-md-3">
+            <lecture-contents lecture="{{lectures.currentLecture}}"></lecture-contents> <!-- if doesn't work, try without expression -->
+        </div>
     </div>
 </div>
