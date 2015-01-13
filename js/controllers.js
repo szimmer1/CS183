@@ -5,7 +5,8 @@
 "use strict";
 
 angular.module('controllers', [])
-    .controller('MainController', ['$scope', 'lectureService', function($scope,lectureService) {
+    .controller('MainController', ['$scope', 'lectureService', '$routeParams','dateService',
+        function($scope,lectureService,dateService,$routeParams) {
 
         $scope.mainTest = "Got MainController";
 

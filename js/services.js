@@ -23,7 +23,12 @@ angular.module('services',[])
 
         dateService.getFormattedDate = function(string) {
             var date = new Date(string);
-            return (days[date.getDay()]+' '+months[date.getMonth()]+' '+(date.getDate()+1)+', '+date.getFullYear());
+            if (date) {
+                return (days[date.getDay()] + ' ' + months[date.getMonth()] + ' ' + (date.getDate() + 1) + ', ' + date.getFullYear());
+            }
+            else {
+                return 'no date found';
+            }
         };
 
         return dateService;
