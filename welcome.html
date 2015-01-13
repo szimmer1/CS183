@@ -11,3 +11,12 @@
         <i class="fa fa-hand-o-up fa-2x"></i>
     </div>
 </div>
+<script>
+    $(function() {
+        //debugger;
+        var docHeight = $(document).height();
+        var footerHeight = $('.footer').height();
+        var marginTop = docHeight-footerHeight-200;
+        $('.footer').css("margin-top", marginTop+"px")
+    });
+</script>
