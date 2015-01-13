@@ -1,0 +1,101 @@
+<h3>URL's</h3>
+        <p>
+            Every request has a url with components
+            <ul>
+                <li><b>http</b> = scheme</li>
+                <li><b>www.soe.ucsc.edu</b> = host</li>
+                <li><b>/index.html</b> = path</li>
+                <li><b>?query=true</b> = query parameters</li>
+            </ul>
+        </p>
+<h3>Request methods</h3>
+        <p>
+            There are two main request methods
+            <ul>
+                <li><b>GET</b>: Used to get a resource. A GET request should never result in a change on the server (may lead to race conditions)</li>
+                <ul>
+                    <li>Any parameters to a get request need to be part of the URL</li>
+                </ul>
+                <li><b>POST</b>: Can have an effect on the server: insert data, delete a record, etc. <br>Requests can have:</li>
+                <ul>
+                    <li>Data payload</li>
+                    <li>Dictionary of variables</li>
+                </ul>
+            </ul>
+        </p>
+        <p>
+            A request is usually accompanied by request headers
+        </p>
+
+<h3>Response status codes</h3>
+    <p>Look it up on <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">w3 specs</a><br>
+        Of note, the server should respond with 303 status code and redirect path for a POST method; it is up to the browser
+        to handle the redirect with a second, GET, request
+    </p>
+
+
+<h3>DAL (Database abstraction layer) - tables.py</h3>
+        <p>
+            Directory: <code>web2py.app/Contents/Resources/applications/bboard/models/tables.py</code><br>
+            How to declare the model:
+        </p>
+        <code>
+<pre>def get_first_name():
+    name = 'Anon'
+    if auth.user:
+        return auth.user.name()
+
+db.define_table('bboard',
+    Field('email'),
+    Field('date_posted','datetime'),
+    Field('bbpost','text')
+
+    db.bboard.bbpost.label = "Post"  # set schema for db vars
+
+    cd.bboard.name.default = get_first_name()
+</pre>
+        </code>
+        <p>
+            Accessing models in <code>default</code>
+        </p>
+        <code>
+<pre>def index():  # exposes index.html
+    posts = db().select(db.bboard.ALL)  # incorrect code
+    return dict(posts=posts)
+</pre>
+        </code>
+
+<h3>Templating</h3>
+    <p>
+        Always want to extend the template with <code>{{extent template.html}}</code>
+    </p>
+
+<h3>Exposing new paths</h3>
+        <p>
+            Add to the <code>default</code> file to expose new paths
+        </p>
+        <code>
+<pre>def add():
+    """Add a post"""
+    form = SQLFORM(db.bboard)
+    if form.process().accepted:
+        # processing success
+        session.flash = T('added')
+        redirect(URL('default', 'index'))
+    return dict(form=form)
+</pre>
+        </code>
+        <p>
+            Require login for access
+        </p>
+        <code>
+<pre>@auth.requires.login()
+def exposed_path():
+    # ...
+</pre>
+        </code>
+<h3>Using GIT</h3>
+        <p>I'm not going to take notes on this, and check <a href="https://help.github.com/articles/set-up-git">Github guides</a></p>
+
+
+

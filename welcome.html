@@ -12,11 +12,19 @@
     </div>
 </div>
 <script>
-    $(function() {
-        //debugger;
-        var docHeight = $(document).height();
-        var footerHeight = $('.footer').height();
-        var marginTop = docHeight-footerHeight-200;
-        $('.footer').css("margin-top", marginTop+"px")
-    });
+    (function(href) {
+        $(function() {
+            if (href === window.location.origin + window.location.pathname + "#/") {
+                var docHeight = $(document).height();
+                var footerHeight = $('.footer').height();
+                var marginTop = docHeight - footerHeight - 200;
+                $('.footer').css("margin-top", marginTop + "px");
+                return true;
+            }
+            else {
+                $('.footer').css("margin-top", "0px");
+                return false;
+            }
+        });
+    })(window.location.href);
 </script>
