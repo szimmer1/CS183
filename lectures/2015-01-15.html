@@ -1,0 +1,31 @@
+<h3>More DAL options</h3>
+        <p>
+            Added to individual fields. Ex. <code>db.mydatabase.field1</code>
+        </p>
+        <ul>
+            <li><b>.label</b> define a schema (how DB fields appear to the programmer)</li>
+            <li><b>.default</b> define DB values until explicitly defined</li>
+            <li><b>.requires</b> takes a validation function to validate a field</li>
+            <li><b>.readable</b> if true, never shown in a view</li>
+            <li><b>.writable</b> set to true or false defines whether a DB entry can be changed after initialization</li>
+        </ul>
+<h3>request</h3>
+        <p>
+            A container structure with all the variables from the user request. Access with request.var or request.args(0)
+        </p>
+<h3>Redirect</h3>
+        <p><code>redirect(URL('default','index')</code></p>
+<h3>session.flash</h3>
+        <p>A built-in queue for alert messages. Standard use to append to queue is:<br>
+        <code>session.flash = T("message")</code></p>
+<h3>Nicer SQLFORM</h3>
+        <p>
+            A more informative form, showing specified entries and having edit/delete functionality
+            <code>
+<pre>form = SQLFORM.grid(q,
+fields=[db.mytable.name,db.mytable.email,db.mytable.date
+editable=false
+deletable=false
+)</pre>
+            </code>
+        </p>
